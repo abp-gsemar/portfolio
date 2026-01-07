@@ -1,0 +1,277 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", system-ui, sans-serif;
+  }
+  
+  body {
+    background: #f8fafc;
+    color: #020617;
+  }
+  
+  /* LAYOUT */
+  .container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 0 20px;
+  }
+  
+  /* TOP BAR */
+  .top-bar {
+    padding: 20px 0;
+  }
+  
+  .back-link {
+    font-weight: 600;
+    text-decoration: none;
+    color: #2563eb;
+  }
+  
+  /* HEADER */
+  .page-header {
+    margin-bottom: 60px;
+  }
+  
+  .page-header h1 {
+    font-size: 38px;
+    font-weight: 800;
+    margin-bottom: 12px;
+  }
+  
+  .page-header p {
+    font-size: 16px;
+    color: #334155;
+    max-width: 700px;
+  }
+  
+  /* IMAGE SECTION */
+  .image-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-bottom: 80px;
+  }
+  
+  .image-section img {
+    width: 100%;
+    border-radius: 18px;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+  }
+  
+  /* DESCRIPTION */
+  .image-desc h2 {
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 10px;
+  }
+  
+  .image-desc p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 14px;
+    color: #334155;
+  }
+  
+  .image-desc ul {
+    padding-left: 18px;
+  }
+  
+  .image-desc li {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  
+  /* CTA */
+  .cta-box {
+    background: #fde047;
+    padding: 48px;
+    border-radius: 28px;
+    text-align: center;
+    margin-bottom: 80px;
+  }
+  
+  .cta-box h2 {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 10px;
+  }
+  
+  .cta-box p {
+    font-size: 15px;
+    margin-bottom: 24px;
+  }
+  
+  .cta-btn {
+    display: inline-block;
+    background: #020617;
+    color: #fff;
+    padding: 14px 26px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  /* FOOTER */
+  footer {
+    background: #020617;
+    color: #fff;
+    text-align: center;
+    padding: 24px;
+    font-size: 14px;
+  }
+  
+  /* RESPONSIVE */
+  @media (min-width: 900px) {
+    .image-section {
+      grid-template-columns: 1.2fr 1fr;
+      align-items: center;
+    }
+  }
+  
+  /* =====================
+   CAROUSEL (VIDEO & DESIGN)
+===================== */
+.carousel-section {
+    margin-bottom: 90px;
+  }
+  
+  .carousel-title {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 24px;
+  }
+  
+  .carousel-note {
+    margin-top: 18px;
+    font-size: 14px;
+    color: #475569;
+  }
+  
+  .carousel-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .carousel-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .carousel-item {
+    min-width: calc(100% / 3 - 14px);
+    border-radius: 18px;
+    background: #fff;
+  
+    box-shadow:
+      0 10px 30px rgba(0,0,0,0.12),
+      inset 0 0 0 1px rgba(255,255,255,0.6);
+  
+    cursor: pointer;
+  }
+  
+  .carousel-item video,
+  .carousel-item img {
+    width: 100%;
+    border-radius: 18px;
+  }
+  
+  /* 3D hover */
+  .carousel-item:hover {
+    transform: translateY(-6px) scale(1.03);
+  }
+  
+  /* NAV */
+  .carousel-btn {
+    position: absolute;
+    top: 45%;
+    background: #020617;
+    color: #fff;
+    border: none;
+    font-size: 26px;
+    padding: 6px 14px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 5;
+  }
+  
+  .carousel-btn.prev { left: 10px; }
+  .carousel-btn.next { right: 10px; }
+  
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .carousel-item {
+      min-width: calc(100% / 2 - 10px);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .carousel-item {
+      min-width: 100%;
+    }
+  }
+  
+  /* =====================
+   SUBTLE 3D GRID SYSTEM
+===================== */
+
+/* Wrapper kasih grid halus */
+.carousel-wrapper {
+    position: relative;
+    padding: 30px 20px;
+    border-radius: 28px;
+  
+    /* GRID BACKGROUND */
+    background:
+      linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px);
+    background-size: 24px 24px;
+  
+    /* Soft depth */
+    box-shadow:
+      0 20px 40px rgba(0,0,0,0.08),
+      inset 0 1px 0 rgba(255,255,255,0.6);
+  }
+  
+  /* Track lebih rapi */
+  .carousel-track {
+    perspective: 1000px;
+  }
+  
+  /* ITEM dengan depth */
+  .carousel-item {
+    transform-style: preserve-3d;
+    position: relative;
+  
+    box-shadow:
+      0 8px 20px rgba(0,0,0,0.12),
+      0 0 0 1px rgba(0,0,0,0.04);
+  }
+  
+  /* Hover 3D HALUS */
+  .carousel-item:hover {
+    transform:
+      translateY(-6px)
+      translateZ(12px)
+      scale(1.02);
+  }
+  
+  /* DARK MODE SUPPORT */
+  body.dark .carousel-wrapper {
+    background:
+      linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size: 24px 24px;
+  
+    box-shadow:
+      0 20px 45px rgba(255,255,255,0.05),
+      inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+  
+  body.dark .carousel-item {
+    box-shadow:
+      0 10px 30px rgba(255,255,255,0.08),
+      0 0 0 1px rgba(255,255,255,0.12);
+  }
+
