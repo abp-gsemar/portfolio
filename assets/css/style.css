@@ -328,6 +328,12 @@ footer{
   color:var(--muted);
   font-size:13px;
 }
+/* FOOTER LOGO */
+.footer-logo {
+  height: 22px;   /* kecil & proporsional */
+  opacity: 0.8;   /* lebih subtle */
+}
+
 
 /* =====================
    RESPONSIVE (DESKTOP)
