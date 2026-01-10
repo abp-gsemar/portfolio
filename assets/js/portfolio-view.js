@@ -97,3 +97,41 @@ document.addEventListener("keydown",e=>{
     closeVideoModal();
   }
 });
+
+/* =====================
+   IMAGE MODAL
+===================== */
+
+const imgModal = document.getElementById("imgModal");
+const modalImg = document.getElementById("modalImg");
+const closeImg = document.querySelector(".close-img");
+
+/* OPEN IMAGE */
+document.querySelectorAll(".carousel-item img").forEach(img=>{
+  img.addEventListener("click",()=>{
+    modalImg.src = img.src;
+    imgModal.classList.add("show");
+  });
+});
+
+/* CLOSE */
+function closeImgModal(){
+  imgModal.classList.remove("show");
+}
+
+closeImg.onclick = closeImgModal;
+
+/* CLICK OUTSIDE */
+imgModal.addEventListener("click",e=>{
+  if(e.target===imgModal){
+    closeImgModal();
+  }
+});
+
+/* ESC */
+document.addEventListener("keydown",e=>{
+  if(e.key==="Escape"){
+    closeImgModal();
+  }
+});
+
