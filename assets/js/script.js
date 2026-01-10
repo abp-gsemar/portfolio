@@ -209,3 +209,38 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       ?.scrollIntoView({ behavior: "smooth" });
   });
 });
+
+/* =====================
+   FULLSCREEN IMAGE VIEW
+===================== */
+const modal = document.getElementById("imgModal");
+const modalImg = document.getElementById("modalImg");
+const closeModal = document.querySelector(".close-modal");
+
+/* CLICK IMAGE */
+document.querySelectorAll(
+  ".carousel-item img, .stack-item img"
+).forEach(img=>{
+  img.addEventListener("click",()=>{
+    modal.classList.add("show");
+    modalImg.src = img.src;
+  });
+});
+
+/* CLOSE */
+closeModal.onclick = ()=>modal.classList.remove("show");
+
+/* CLICK OUTSIDE */
+modal.addEventListener("click",e=>{
+  if(e.target===modal){
+    modal.classList.remove("show");
+  }
+});
+
+/* ESC */
+document.addEventListener("keydown",e=>{
+  if(e.key==="Escape"){
+    modal.classList.remove("show");
+  }
+});
+
