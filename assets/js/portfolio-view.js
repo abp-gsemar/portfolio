@@ -98,20 +98,20 @@ document.addEventListener("keydown",e=>{
   }
 });
 
-/* =====================
-   IMAGE MODAL
-===================== */
+/* IMAGE FULLSCREEN MODAL FIX */
 
 const imgModal = document.getElementById("imgModal");
 const modalImg = document.getElementById("modalImg");
 const closeImg = document.querySelector(".close-img");
 
-/* OPEN IMAGE */
-document.querySelectorAll(".carousel-item img").forEach(img=>{
-  img.addEventListener("click",()=>{
-    modalImg.src = img.src;
+/* EVENT DELEGATION (AMAN DENGAN CAROUSEL) */
+document.addEventListener("click",function(e){
+
+  if(e.target.matches(".carousel-item img")){
+    modalImg.src = e.target.src;
     imgModal.classList.add("show");
-  });
+  }
+
 });
 
 /* CLOSE */
@@ -119,9 +119,8 @@ function closeImgModal(){
   imgModal.classList.remove("show");
 }
 
-closeImg.onclick = closeImgModal;
+closeImg.addEventListener("click",closeImgModal);
 
-/* CLICK OUTSIDE */
 imgModal.addEventListener("click",e=>{
   if(e.target===imgModal){
     closeImgModal();
