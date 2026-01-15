@@ -432,7 +432,7 @@ footer{
 /* MOBILE HEIGHT */
 @media(max-width:600px){
   .stack-carousel{
-    height:260px;
+    height:1350px;
   }
 }
 
@@ -440,8 +440,8 @@ footer{
   position:absolute;
   top:50%;
   left:50%;
-  width:300px;
-  height:210px;
+  width:1080px;
+  height:1350px;
   transform-style:preserve-3d;
   transform:translate(-50%,-50%) scale(.8);
   opacity:0;
