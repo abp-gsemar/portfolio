@@ -425,14 +425,14 @@ footer{
 .stack-carousel {
   position: relative;
   margin-top: 50px;
-  height: 1350px;
+  height: 600px;
   perspective: 1200px;
 }
 
 /* MOBILE HEIGHT */
 @media(max-width:600px){
   .stack-carousel{
-    height:1350px;
+    height:600px;
   }
 }
 
@@ -440,8 +440,8 @@ footer{
   position:absolute;
   top:50%;
   left:50%;
-  width:1080px;
-  height:1350px;
+  width:400px;
+  height:600px;
   transform-style:preserve-3d;
   transform:translate(-50%,-50%) scale(.8);
   opacity:0;
@@ -458,8 +458,8 @@ footer{
 /* MOBILE SIZE */
 @media(max-width:600px){
   .stack-item{
-    width:1080px;
-    height:1350px;
+    width:400px;
+    height:600px;
   }
 }
 
