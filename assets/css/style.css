@@ -425,7 +425,7 @@ footer{
 .stack-carousel {
   position: relative;
   margin-top: 50px;
-  height: 340px;
+  height: 1350px;
   perspective: 1200px;
 }
 
@@ -458,8 +458,8 @@ footer{
 /* MOBILE SIZE */
 @media(max-width:600px){
   .stack-item{
-    width:220px;
-    height:160px;
+    width:1080px;
+    height:1350px;
   }
 }
 
