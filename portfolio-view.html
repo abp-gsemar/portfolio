@@ -1,595 +1,137 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap");
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Inter", system-ui, sans-serif;
-}
-
-/* =====================
-   COLOR SYSTEM
-===================== */
-:root {
-  --bg: #020617;
-  --card: #0b0b14;
-  --text: #e5e7eb;
-  --muted: #9ca3af;
-  --neon: #38bdf8;
-  --neon2: #6366f1;
-}
-
-/* =====================
-   BASE
-===================== */
-body {
-  background: radial-gradient(circle at top, #0f172a, #020617);
-  color: var(--text);
-  line-height: 1.7;
-}
-
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 0 18px;
-}
-
-.section {
-  padding: 80px 0;
-  position:relative;
-  z-index:2;
-}
-
-.center { text-align: center; }
-
-.visually-hidden {
-  position: absolute;
-  left: -9999px;
-}
-
-/* =====================
-   HEADER (COMPACT)
-===================== */
-.navbar {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  backdrop-filter: blur(12px);
-  background: rgba(2,6,23,.7);
-  border-bottom: 1px solid rgba(255,255,255,.06);
-  z-index: 100;
-}
-
-.nav-flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px 0;
-}
-
-/* Logo */
-.logo {
-  font-weight: 800;
-  letter-spacing: .08em;
-  font-size: 14px;
-  color: var(--neon);
-}
-
-.logo img {
-  height: 24px;
-}
-
-/* Header buttons */
-.nav-actions button {
-  margin-left: 6px;
-  padding: 4px 8px;
-  border-radius: 8px;
-  border: none;
-  background: linear-gradient(135deg,var(--neon),var(--neon2));
-  color:#000;
-  font-size: 12px;
-  cursor: pointer;
-}
-
-/* MENU */
-nav {
-  position: fixed;
-  top: 52px;
-  right: -100%;
-  background: var(--card);
-  padding: 18px;
-  border-radius: 14px;
-  transition: .35s ease;
-  box-shadow: 0 30px 80px rgba(0,0,0,.8);
-}
-
-nav.show { right: 16px; }
-
-nav a {
-  display: block;
-  margin-bottom: 12px;
-  text-decoration: none;
-  color: var(--text);
-  font-weight: 600;
-  font-size: 14px;
-}
-
-/* =====================
-   HERO
-===================== */
-.hero-editorial {
-  padding: 120px 0 70px;
-}
-
-.hero-grid {
-  display: grid;
-  gap: 42px;
-}
-
-.hero-photo {
-  position: relative;
-  max-width: 260px;
-  margin: auto;
-}
-
-.hero-photo img {
-  width: 100%;
-  border-radius: 18px;
-  box-shadow: 0 30px 60px rgba(0,0,0,.8);
-}
-
-.photo-bg {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  background: linear-gradient(135deg,var(--neon),var(--neon2));
-  border-radius: 50%;
-  top: 30px;
-  left: -30px;
-  filter: blur(36px);
-  opacity: .6;
-}
-
-.hero-editorial h1 {
-  font-size: 28px;
-  font-weight: 800;
-  margin: 16px 0;
-  line-height: 1.3;
-}
-
-.hero-editorial h1 span {
-  background: linear-gradient(135deg,var(--neon),var(--neon2));
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
-.hero-desc {
-  font-size: 14px;
-  color: var(--muted);
-}
-
-.hero-cta {
-  display: inline-block;
-  margin-top: 26px;
-  padding: 12px 26px;
-  background: linear-gradient(135deg,var(--neon),var(--neon2));
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 14px;
-  color:#000;
-
-  box-shadow:
-    0 8px 0 #020617,
-    0 18px 30px rgba(0,0,0,.6);
-  transition: .25s;
-}
-
-.hero-cta:hover {
-  transform: translateY(3px);
-  box-shadow:
-    0 4px 0 #020617,
-    0 10px 20px rgba(0,0,0,.6);
-}
-
-/* =====================
-   CARD SYSTEM (3D)
-===================== */
-.card,
-.project-card {
-  background: linear-gradient(180deg,#0b0b14,#0e0e18);
-  padding: 26px;
-  border-radius: 20px;
-
-  box-shadow:
-    0 20px 50px rgba(0,0,0,.8),
-    inset 0 0 0 1px rgba(255,255,255,.05);
-
-  transform-style: preserve-3d;
-  transition: .35s;
-}
-
-.project-card:hover {
-  transform: translateY(-8px) translateZ(12px);
-}
-
-.project-card h3 {
-  margin-bottom: 10px;
-  font-size: 16px;
-}
-
-.project-card p {
-  font-size: 13px;
-  color: var(--muted);
-}
-
-/* GRID */
-.project-grid {
-  display: grid;
-  gap: 22px;
-  margin-top: 60px; /* FIX: beri jarak dari carousel */
-}
-
-/* =====================
-   CAROUSEL FUTURE
-===================== */
-.carousel-wrapper {
-  margin-top: 10px;
-  padding: 22px;
-  border-radius: 22px;
-  background:
-    linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
-  background-size: 32px 32px;
-
-  box-shadow: 0 40px 90px rgba(0,0,0,.9);
-}
-
-.carousel-track {
-  display: flex;
-  gap: 16px;
-  transition: .6s cubic-bezier(.16,1,.3,1);
-}
-
-.carousel-item {
-  min-width: 100%;
-  border-radius: 18px;
-  background: #05050a;
-  padding: 5px;
-  cursor:pointer;
-
-  box-shadow:
-    0 14px 40px rgba(0,0,0,.8),
-    inset 0 0 0 1px rgba(255,255,255,.08);
-
-  transition:.35s;
-}
-
-.carousel-item:hover {
-  transform: translateY(-6px) scale(1.02);
-}
-
-.carousel-item img {
-  width:100%;
-  border-radius:14px;
-}
-
-/* =====================
-   FULLSCREEN IMAGE MODAL
-===================== */
-.img-modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.92);
-  z-index:9999;
-
-  justify-content:center;
-  align-items:center;
-  padding:20px;
-}
-
-.img-modal.show{
-  display:flex;
-}
-
-.modal-content{
-  max-width:95%;
-  max-height:95%;
-  border-radius:12px;
-
-  animation:zoom .3s ease;
-  box-shadow:
-    0 0 40px rgba(56,189,248,.5),
-    0 0 80px rgba(99,102,241,.4);
-}
-
-.close-modal{
-  position:absolute;
-  top:20px;
-  right:26px;
-  font-size:34px;
-  color:#fff;
-  cursor:pointer;
-  font-weight:bold;
-  opacity:.8;
-}
-.close-modal:hover{opacity:1;}
-
-@keyframes zoom{
-  from{transform:scale(.8);opacity:0}
-  to{transform:scale(1);opacity:1}
-}
-
-
-/* NAV */
-.carousel-btn {
-  position:absolute;
-  top:45%;
-  background:linear-gradient(135deg,var(--neon),var(--neon2));
-  color:#000;
-  border:none;
-  font-size:22px;
-  padding:6px 12px;
-  border-radius:50%;
-  cursor:pointer;
-  z-index:10;
-}
-
-/* =====================
-   3D BUTTON
-===================== */
-.btn-3d {
-  display:inline-block;
-  background:linear-gradient(135deg,var(--neon),var(--neon2));
-  color:#000;
-  padding:12px 24px;
-  border-radius:12px;
-  font-weight:700;
-  text-decoration:none;
-  font-size: 14px;
-
-  box-shadow:
-    0 8px 0 #020617,
-    0 18px 30px rgba(0,0,0,.7);
-  transition:.25s;
-}
-
-.btn-3d:hover{
-  transform:translateY(3px);
-  box-shadow:
-    0 4px 0 #020617,
-    0 10px 20px rgba(0,0,0,.7);
-}
-
-.btn-3d.small{
-  margin-top:16px;
-  padding:8px 18px;
-  font-size:13px;
-}
-
-/* =====================
-   FOOTER
-===================== */
-footer{
-  text-align:center;
-  padding:32px;
-  background:#020617;
-  color:var(--muted);
-  font-size:13px;
-}
-/* FOOTER LOGO */
-.footer-logo {
-  height: 22px;
-  opacity: 0.8;
-}
-
-
-/* =====================
-   RESPONSIVE (DESKTOP)
-===================== */
-@media(min-width:900px){
-  .hero-grid{grid-template-columns:360px 1fr;}
-  .hero-editorial h1{font-size:40px;}
-
-  .project-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .carousel-item{
-    min-width:calc(100%/3 - 12px);
-  }
-}
-
-@media(min-width:600px) and (max-width:900px){
-  .carousel-item{
-    min-width:calc(100%/2 - 10px);
-  }
-}
-
-/* =====================
-   ANIMATION
-===================== */
-.reveal{
-  opacity:0;
-  transform:translateY(40px);
-  transition:1s ease;
-}
-.reveal.show{
-  opacity:1;
-  transform:translateY(0);
-}
-
-/* =====================
-   STACK CAROUSEL UPGRADE (FIXED)
-===================== */
-
-.stack-carousel {
-  position: relative;
-  margin: 30px auto 80px; /* FIX spacing */
-  height: 640px; /* FIX supaya tidak ketiban */
-  perspective: 1200px;
-}
-
-/* MOBILE HEIGHT */
-@media(max-width:600px){
-  .stack-carousel{
-    height:520px;
-  }
-}
-
-.stack-item{
-  position:absolute;
-  top:50%;
-  left:50%;
-  width:400px;
-  height:600px;
-  transform-style:preserve-3d;
-  transform:translate(-50%,-50%) scale(.8);
-  opacity:0;
-  transition:.7s cubic-bezier(.16,1,.3,1);
-
-  background:#fff;
-  padding:10px;
-  border-radius:8px;
-
-  box-shadow:
-    0 25px 60px rgba(0,0,0,.45);
-}
-
-/* MOBILE SIZE */
-@media(max-width:600px){
-  .stack-item{
-    width:340px;
-    height:520px;
-  }
-}
-
-/* IMAGE */
-.stack-item img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  border-radius:4px;
-}
-
-/* ACTIVE */
-.stack-item.active{
-  transform:translate(-50%,-50%) scale(1);
-  opacity:1;
-  z-index:5;
-
-  box-shadow:
-    0 30px 80px rgba(56,189,248,.6),
-    0 0 40px rgba(99,102,241,.6);
-}
-
-/* NEXT & PREV */
-.stack-item.next{
-  transform:translate(-50%,-50%) translateX(70px) scale(.9);
-  opacity:.8;
-  z-index:4;
-}
-.stack-item.prev{
-  transform:translate(-50%,-50%) translateX(-70px) scale(.9);
-  opacity:.8;
-  z-index:4;
-}
-
-/* BACK */
-.stack-item.back{
-  transform:translate(-50%,-50%) translateZ(-120px) scale(.75);
-  opacity:.35;
-}
-
-/* BUTTON */
-.stack-btn{
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  background:#020617;
-  color:#fff;
-  border:none;
-  font-size:20px;
-  padding:8px 14px;
-  border-radius:50%;
-  cursor:pointer;
-  z-index:10;
-  opacity:.8;
-}
-.stack-btn:hover{opacity:1;}
-
-.stack-btn.prev{left:10px;}
-.stack-btn.next{right:10px;}
-
-/* =====================
-   STACK CAROUSEL FIX
-===================== */
-
-.stack-carousel{
-  margin:30px auto 40px;
-  height:520px; /* lebih proporsional */
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-/* MOBILE */
-@media(max-width:600px){
-  .stack-carousel{
-    height:460px;
-  }
-}
-
-/* ITEM */
-.stack-item{
-  width:340px;
-  height:480px;
-  border-radius:18px;
-  overflow:hidden;
-  background:#fff;
-}
-
-/* MOBILE */
-@media(max-width:600px){
-  .stack-item{
-    width:300px;
-    height:420px;
-  }
-}
-
-/* POSITION REFINEMENT */
-.stack-item.active{
-  transform:translate(-50%,-50%) scale(1);
-}
-
-.stack-item.next{
-  transform:translate(-50%,-50%) translateX(60px) scale(.9);
-}
-
-.stack-item.prev{
-  transform:translate(-50%,-50%) translateX(-60px) scale(.9);
-}
-
-/* BACK ITEM */
-.stack-item.back{
-  transform:translate(-50%,-50%) translateZ(-80px) scale(.8);
-}
-
-/* BUTTON POSITION */
-.stack-btn{
-  top:50%;
-}
-
-.stack-btn.prev{left:5px;}
-.stack-btn.next{right:5px;}
-
-/* FIX OVERLAP */
-#projects{
-  padding-bottom:40px;
-}
-
-.project-grid{
-  margin-top:30px;
-}
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Portfolio View | Digital Marketing Results</title>
+
+  <meta name="description" content="Digital marketing portfolio showcasing Google Search Console results, landing page performance, AI video content, and design samples.">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/portfolio-view.css">
+</head>
+<body>
+
+<header class="top-bar">
+  <div class="container">
+    <a href="index.html" class="back-link">← Back to Portfolio</a>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- HEADER -->
+  <section class="page-header">
+    <h1>Campaign & Performance Overview</h1>
+    <p>
+      Selected screenshots and previews highlighting SEO performance,
+      landing page optimization, content results, and creative execution.
+    </p>
+  </section>
+
+  <!-- =====================
+       GOOGLE SEARCH CONSOLE
+  ====================== -->
+  <section class="image-section">
+    <img src="gsc-sample.jpg" alt="Google Search Console Performance">
+
+    <div class="image-desc">
+      <h2>Google Search Console Performance</h2>
+      <p>
+        Organic performance monitoring using Google Search Console
+        to evaluate impressions, clicks, and keyword visibility.
+      </p>
+      <ul>
+        <li>📈 Growth in impressions and organic visibility</li>
+        <li>🔍 Keyword performance tracking</li>
+        <li>🧠 SEO insights used to refine landing pages</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- =====================
+       LANDING PAGE PREVIEW
+  ====================== -->
+  <section class="image-section">
+    <img src="/assets/img/LP_Klinik.png" alt="Landing Page Preview">
+    <img src="/assets/img/LP_Interior.png" alt="Landing Page Preview">
+    <img src="/assets/img/LP_Skorkilat.png" alt="Landing Page Preview">
+    <img src="/assets/img/LP_Kosmetik.png" alt="Landing Page Preview">
+
+    <div class="image-desc">
+      <h2>Landing Page Optimization</h2>
+      <p>
+        Built and optimized landing pages focused on clarity,
+        conversion, and mobile usability.
+      </p>
+      <ul>
+        <li>🎯 Clear value proposition & CTA</li>
+        <li>📱 Mobile-first layout</li>
+        <li>⚡ Improved CTR & lead quality</li>
+      </ul>
+      </a>
+    </div>
+  </section>
+
+  <!-- =====================
+       AI VIDEO CONTENT
+  ====================== -->
+  <section class="image-section">
+    <video controls poster="video-thumb.jpg" class="video-preview">
+      <source src="ai-video-sample.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="image-desc">
+      <h2>AI Video Content Project</h2>
+      <p>
+        AI-generated short-form video content created for
+        social media campaigns and brand storytelling.
+      </p>
+      <ul>
+        <li>🎬 Short-form video for Instagram & TikTok</li>
+        <li>🤖 AI-assisted script & visuals</li>
+        <li>📊 Optimized for retention & engagement</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- =====================
+       DESIGN SAMPLE
+  ====================== -->
+  <section class="image-section">
+    <img src="design-sample.jpg" alt="Design Sample">
+
+    <div class="image-desc">
+      <h2>Social Media Design Sample</h2>
+      <p>
+        Visual design created for social media campaigns,
+        ensuring consistency with brand identity and messaging.
+      </p>
+      <ul>
+        <li>🎨 Feed & carousel design</li>
+        <li>📐 Consistent layout & typography</li>
+        <li>🧠 Design aligned with content strategy</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-box">
+    <h2>Interested in Similar Results?</h2>
+    <p>
+      I help brands grow through data-driven digital marketing,
+      social media strategy, and content optimization.
+    </p>
+    <a href="mailto:your@email.com" class="cta-btn">Contact Me</a>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 ABP — Digital Marketing & Social Media Specialist</p>
+</footer>
+<script src="assets/js/portfolio-view.js"></script>
+</body>
+</html>
