@@ -36,6 +36,8 @@ body {
 
 .section {
   padding: 80px 0;
+  position:relative;
+  z-index:2;
 }
 
 .center { text-align: center; }
@@ -225,7 +227,7 @@ nav a {
 .project-grid {
   display: grid;
   gap: 22px;
-  margin-top: 40px;
+  margin-top: 60px; /* FIX: beri jarak dari carousel */
 }
 
 /* =====================
@@ -378,8 +380,8 @@ footer{
 }
 /* FOOTER LOGO */
 .footer-logo {
-  height: 22px;   /* kecil & proporsional */
-  opacity: 0.8;   /* lebih subtle */
+  height: 22px;
+  opacity: 0.8;
 }
 
 
@@ -419,20 +421,20 @@ footer{
 }
 
 /* =====================
-   STACK CAROUSEL UPGRADE
+   STACK CAROUSEL UPGRADE (FIXED)
 ===================== */
 
 .stack-carousel {
   position: relative;
-  margin-top: 50px;
-  height: 270px;
+  margin: 30px auto 80px; /* FIX spacing */
+  height: 640px; /* FIX supaya tidak ketiban */
   perspective: 1200px;
 }
 
 /* MOBILE HEIGHT */
 @media(max-width:600px){
   .stack-carousel{
-    height:600px;
+    height:520px;
   }
 }
 
@@ -458,8 +460,8 @@ footer{
 /* MOBILE SIZE */
 @media(max-width:600px){
   .stack-item{
-    width:400px;
-    height:600px;
+    width:340px;
+    height:520px;
   }
 }
 
@@ -477,7 +479,6 @@ footer{
   opacity:1;
   z-index:5;
 
-  /* GLOW */
   box-shadow:
     0 30px 80px rgba(56,189,248,.6),
     0 0 40px rgba(99,102,241,.6);
@@ -520,4 +521,3 @@ footer{
 
 .stack-btn.prev{left:10px;}
 .stack-btn.next{right:10px;}
-
