@@ -14,18 +14,6 @@ onComplete:()=>window.location=url
 });
 });
 
-/* PARTICLES */
-tsParticles.load("particles",{
-particles:{
-number:{value:40},
-color:{value:"#38bdf8"},
-links:{enable:true,color:"#6366f1"},
-move:{enable:true,speed:1},
-size:{value:2}
-},
-background:{color:"transparent"}
-});
-
 /* CAROUSEL */
 document.querySelectorAll(".carousel-wrapper").forEach(wrapper=>{
 
