@@ -15,11 +15,12 @@ onComplete:()=>window.location=url
 });
 
 /* CAROUSEL */
-const wrapper=document.querySelector(".carousel-wrapper");
-const track=document.querySelector(".carousel-track");
-const items=document.querySelectorAll(".carousel-item");
-const prev=document.querySelector(".prev");
-const next=document.querySelector(".next");
+document.querySelectorAll(".carousel-wrapper").forEach(wrapper=>{
+
+const track=wrapper.querySelector(".carousel-track");
+const items=wrapper.querySelectorAll(".carousel-item");
+const prev=wrapper.querySelector(".prev");
+const next=wrapper.querySelector(".next");
 
 let index=0,startX=0;
 
@@ -58,11 +59,12 @@ if(endX-startX>50) prevSlide();
 
 window.addEventListener("resize",update);
 update();
+});
 
 /* FULLSCREEN */
-const modal=document.getElementById("preview");
+const modal=document.getElementById("previewModal");
 const modalImg=document.getElementById("previewImg");
-const close=document.getElementById("close");
+const close=document.getElementById("closePreview");
 
 document.addEventListener("click",e=>{
 if(e.target.tagName==="IMG" && e.target.closest(".carousel-item")){
@@ -90,13 +92,11 @@ document.querySelectorAll(".lazy").forEach(img=>obs.observe(img));
 /* GSAP */
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.from(".fade",{
+gsap.utils.toArray(".fade").forEach(el=>{
+gsap.from(el,{
 opacity:0,
 y:60,
 duration:1,
-stagger:.2,
-scrollTrigger:{
-trigger:".fade",
-start:"top 80%"
-}
+scrollTrigger:{trigger:el,start:"top 80%"}
+});
 });
