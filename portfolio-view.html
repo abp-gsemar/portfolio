@@ -521,3 +521,75 @@ footer{
 
 .stack-btn.prev{left:10px;}
 .stack-btn.next{right:10px;}
+
+/* =====================
+   STACK CAROUSEL FIX
+===================== */
+
+.stack-carousel{
+  margin:30px auto 40px;
+  height:520px; /* lebih proporsional */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  .stack-carousel{
+    height:460px;
+  }
+}
+
+/* ITEM */
+.stack-item{
+  width:340px;
+  height:480px;
+  border-radius:18px;
+  overflow:hidden;
+  background:#fff;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  .stack-item{
+    width:300px;
+    height:420px;
+  }
+}
+
+/* POSITION REFINEMENT */
+.stack-item.active{
+  transform:translate(-50%,-50%) scale(1);
+}
+
+.stack-item.next{
+  transform:translate(-50%,-50%) translateX(60px) scale(.9);
+}
+
+.stack-item.prev{
+  transform:translate(-50%,-50%) translateX(-60px) scale(.9);
+}
+
+/* BACK ITEM */
+.stack-item.back{
+  transform:translate(-50%,-50%) translateZ(-80px) scale(.8);
+}
+
+/* BUTTON POSITION */
+.stack-btn{
+  top:50%;
+}
+
+.stack-btn.prev{left:5px;}
+.stack-btn.next{right:5px;}
+
+/* FIX OVERLAP */
+#projects{
+  padding-bottom:40px;
+}
+
+.project-grid{
+  margin-top:30px;
+}
+
