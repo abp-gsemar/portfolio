@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insight & Performance</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="insight.css">
+
+<!-- GSAP -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+<div id="pageTransition"></div>
+
+<header class="top-bar">
+<div class="container">
+<a href="portfolio-view.html" class="back-link transition-link">← Kembali</a>
+</div>
+</header>
+
+<main class="container">
+
+<section class="header fade">
+<h1>Insight & Performance</h1>
+<p>Analisis performa konten sosial media berdasarkan data real.</p>
+</section>
+
+<!-- CAROUSEL -->
+<section class="carousel-section fade">
+
+<h2 class="title">Posting Performance</h2>
+
+<div class="carousel-wrapper">
+<button class="nav prev">‹</button>
+
+<div class="carousel-track">
+
+<div class="carousel-item">
+<img data-src="assets/img/insight-1.jpg" class="lazy">
+</div>
+
+<div class="carousel-item">
+<img data-src="assets/img/insight-2.jpg" class="lazy">
+</div>
+
+<div class="carousel-item">
+<img data-src="assets/img/insight-3.jpg" class="lazy">
+</div>
+
+<div class="carousel-item">
+<img data-src="assets/img/insight-4.jpg" class="lazy">
+</div>
+
+</div>
+
+<button class="nav next">›</button>
+</div>
+
+<ul class="insight-list">
+<li>📈 Reach meningkat signifikan</li>
+<li>🔥 Engagement rate naik</li>
+<li>🎯 Konten viral</li>
+<li>📊 Strategi berbasis data</li>
+</ul>
+
+</section>
+
+</main>
+
+<footer>
+<p>© 2026 ABP</p>
+</footer>
+
+<!-- MODAL -->
+<div id="preview">
+<span id="close">×</span>
+<img id="previewImg">
+</div>
+
+<script src="insight.js"></script>
+</body>
+</html>
