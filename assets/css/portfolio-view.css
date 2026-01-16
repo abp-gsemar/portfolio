@@ -24,12 +24,6 @@ overflow-x:hidden;
 100%{background-position:0% 50%}
 }
 
-#particles{
-position:fixed;
-inset:0;
-z-index:-1;
-}
-
 #pageTransition{
 position:fixed;
 inset:0;
