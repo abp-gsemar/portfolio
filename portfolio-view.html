@@ -7,136 +7,88 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/portfolio-view.css">
+
+<!-- GSAP -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+<!-- Particles -->
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 </head>
 <body>
 
+<!-- PAGE TRANSITION -->
+<div id="pageTransition"></div>
+
+<!-- PARTICLE BG -->
+<div id="particles"></div>
+
 <header class="top-bar">
-  <div class="container">
-    <a href="index.html" class="back-link">← Back</a>
-  </div>
+<div class="container">
+<a href="index.html" class="back-link transition-link">← Back</a>
+</div>
 </header>
 
 <main class="container">
 
-<section class="page-header">
+<section class="page-header fade">
 <h1>Campaign Results</h1>
-<p>Preview performance, landing page, video & design works.</p>
+<p>Digital performance, landing page, AI video & creative work.</p>
 </section>
 
-<!-- ================= CAROUSEL IMAGE ================= -->
-<section class="carousel-section">
+<!-- SEO -->
+<section class="carousel-section fade">
 <h2 class="carousel-title">SEO Performance</h2>
-
 <div class="carousel-wrapper">
 <button class="carousel-btn prev">‹</button>
-
 <div class="carousel-track">
-
-<div class="carousel-item">
-<img src="/assets/img/GSC_01.jpg">
+<div class="carousel-item"><img data-src="/assets/img/GSC_01.jpg" class="lazy"></div>
+<div class="carousel-item"><img data-src="/assets/img/GSC_02.png" class="lazy"></div>
+<div class="carousel-item"><img data-src="/assets/img/GSC_03.png" class="lazy"></div>
+<div class="carousel-item"><img data-src="/assets/img/GCS_04.png" class="lazy"></div>
 </div>
-
-<div class="carousel-item">
-<img src="/assets/img/GSC_02.png">
-</div>
-
-<div class="carousel-item">
-<img src="/assets/img/GSC_03.png">
-</div>
-
-<div class="carousel-item">
-<img src="/assets/img/GCS_04.png">
-</div>
-
-</div>
-
 <button class="carousel-btn next">›</button>
 </div>
-
-<p class="carousel-note">Swipe on mobile</p>
 </section>
 
-<!-- ================= LANDING PAGE ================= -->
-<section class="carousel-section">
+<!-- LANDING PAGE -->
+<section class="carousel-section fade">
 <h2 class="carousel-title">Landing Page</h2>
-
 <div class="carousel-wrapper">
 <button class="carousel-btn prev">‹</button>
-
 <div class="carousel-track">
-
-<div class="carousel-item">
-<img src="/assets/img/LP_Klinik.png">
+<div class="carousel-item"><img data-src="/assets/img/LP_Klinik.png" class="lazy"></div>
+<div class="carousel-item"><img data-src="/assets/img/LP_Interior.png" class="lazy"></div>
+<div class="carousel-item"><img data-src="/assets/img/LP_Skorkilat.png" class="lazy"></div>
+<div class="carousel-item"><img data-src="/assets/img/LP_Kosmetik.png" class="lazy"></div>
 </div>
-
-<div class="carousel-item">
-<img src="/assets/img/LP_Interior.png">
-</div>
-
-<div class="carousel-item">
-<img src="/assets/img/LP_Skorkilat.png">
-</div>
-
-<div class="carousel-item">
-<img src="/assets/img/LP_Kosmetik.png">
-</div>
-
-</div>
-
 <button class="carousel-btn next">›</button>
 </div>
 </section>
 
-<!-- ================= VIDEO CAROUSEL ================= -->
-<section class="carousel-section">
+<!-- VIDEO -->
+<section class="carousel-section fade">
 <h2 class="carousel-title">AI Video</h2>
-
 <div class="carousel-wrapper">
 <button class="carousel-btn prev">‹</button>
-
 <div class="carousel-track">
-
-<div class="carousel-item">
-<video controls>
-<source src="ai-video-sample.mp4" type="video/mp4">
-</video>
+<div class="carousel-item"><video controls data-src="ai-video-sample.mp4" class="lazy-video"></video></div>
+<div class="carousel-item"><video controls data-src="ai-video-2.mp4" class="lazy-video"></video></div>
 </div>
-
-<div class="carousel-item">
-<video controls>
-<source src="ai-video-2.mp4" type="video/mp4">
-</video>
-</div>
-
-</div>
-
 <button class="carousel-btn next">›</button>
 </div>
 </section>
 
-<!-- ================= DESIGN ================= -->
-<section class="carousel-section">
-<h2 class="carousel-title">Design Work</h2>
-
+<!-- DESIGN -->
+<section class="carousel-section fade">
+<h2 class="carousel-title">Design</h2>
 <div class="carousel-wrapper">
 <button class="carousel-btn prev">‹</button>
-
 <div class="carousel-track">
-
-<div class="carousel-item">
-<img src="/assets/img/bangor.png">
+<div class="carousel-item"><img data-src="/assets/img/bangor.png" class="lazy"></div>
+<div class="carousel-item"><img data-src="/assets/img/sony.png" class="lazy"></div>
+<div class="carousel-item"><img data-src="design-sample.jpg" class="lazy"></div>
 </div>
-
-<div class="carousel-item">
-<img src="/assets/img/sony.png">
-</div>
-
-<div class="carousel-item">
-<img src="design-sample.jpg">
-</div>
-
-</div>
-
 <button class="carousel-btn next">›</button>
 </div>
 </section>
@@ -146,6 +98,13 @@
 <footer>
 <p>© 2026 ABP</p>
 </footer>
+
+<!-- FULLSCREEN PREVIEW -->
+<div id="previewModal">
+<span id="closePreview">×</span>
+<img id="previewImg">
+<video id="previewVideo" controls></video>
+</div>
 
 <script src="assets/js/portfolio-view.js"></script>
 </body>
