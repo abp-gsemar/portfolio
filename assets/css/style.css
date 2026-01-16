@@ -232,7 +232,8 @@ nav a {
    CAROUSEL FUTURE
 ===================== */
 .carousel-wrapper {
-  margin-top: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   padding: 22px;
   border-radius: 22px;
   background:
