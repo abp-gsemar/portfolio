@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio View</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/portfolio-view.css">
+
+<!-- GSAP -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+<div id="pageTransition"></div>
+
+<header class="top-bar">
+  <div class="container">
+    <a href="index.html" class="back-link transition-link">← Back</a>
+  </div>
+</header>
+
+<main class="container">
+
+<section class="page-header fade">
+  <h1>Campaign Results</h1>
+  <p>Digital performance, landing page, AI video & creative work.</p>
+</section>
+
+<!-- LANDING PAGE -->
+<section class="carousel-section fade">
+<h2 class="carousel-title">Landing Page</h2>
+<div class="carousel-wrapper">
+<button class="carousel-btn prev">‹</button>
+<div class="carousel-track">
+<div class="carousel-item"><img data-src="/assets/img/LP_Klinik.png" class="lazy"></div>
+<div class="carousel-item"><img data-src="/assets/img/LP_interior.png" class="lazy"></div>
+<div class="carousel-item"><img data-src="/assets/img/LP_Skorkilat.png" class="lazy"></div>
+<div class="carousel-item"><img data-src="/assets/img/LP_kosmetik.png" class="lazy"></div>
+</div>
+<button class="carousel-btn next">›</button>
+</div>
+</section>
+
+<!-- VIDEO (OPTIMIZED) -->
+<section class="carousel-section fade">
+<h2 class="carousel-title">AI Video</h2>
+<div class="carousel-wrapper">
+<button class="carousel-btn prev">‹</button>
+
+<div class="carousel-track">
+
+<div class="carousel-item video-item">
+  <div class="video-overlay"><span class="play-btn">▶</span></div>
+  <video data-src="assets/video/V1_Ramdan.mp4" class="lazy-video" playsinline></video>
+</div>
+
+<div class="carousel-item video-item">
+  <div class="video-overlay"><span class="play-btn">▶</span></div>
+  <video data-src="assets/video/BabyandDad_Podcast.mp4" class="lazy-video" playsinline></video>
+</div>
+
+<div class="carousel-item video-item">
+    <div class="video-overlay"><span class="play-btn">▶</span></div>
+    <video data-src="assets/video/Job_AI_Video1.mp4" class="lazy-video" playsinline></video>
+  </div>
+
+  <div class="carousel-item video-item">
+    <div class="video-overlay"><span class="play-btn">▶</span></div>
+    <video data-src="assets/video/Baby_Podcast1.mp4" class="lazy-video" playsinline></video>
+  </div>
+
+  <div class="carousel-item video-item">
+    <div class="video-overlay"><span class="play-btn">▶</span></div>
+    <video data-src="assets/video/Stich_Berita_Viral.mp4" class="lazy-video" playsinline></video>
+  </div>
+
+</div>
+
+<button class="carousel-btn next">›</button>
+</div>
+</section>
+
+<!-- DESIGN -->
+<section class="carousel-section fade">
+<h2 class="carousel-title">Design</h2>
+<div class="carousel-wrapper">
+<button class="carousel-btn prev">‹</button>
+<div class="carousel-track">
+<div class="carousel-item"><img data-src="/assets/img/bangor.png" class="lazy"></div>
+<div class="carousel-item"><img data-src="/assets/img/sony.png" class="lazy"></div>
+<div class="carousel-item"><img data-src="design-sample.jpg" class="lazy"></div>
+</div>
+<button class="carousel-btn next">›</button>
+</div>
+</section>
+
+</main>
+
+<footer>
+<p>© 2026 ABP</p>
+</footer>
+
+<!-- PREVIEW MODAL (UNCHANGED) -->
+<div id="previewModal">
+<span id="closePreview">×</span>
+<img id="previewImg">
+<video id="previewVideo" controls></video>
+</div>
+
+<script src="assets/js/portfolio-view.js"></script>
+</body>
+</html>
