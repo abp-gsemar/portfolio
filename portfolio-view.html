@@ -48,47 +48,71 @@
 </section>
 
 <!-- VIDEO -->
-<section class="carousel-section fade">
-  <h2 class="carousel-title">AI Video</h2>
+<!-- AI VIDEO SECTION -->
+<section class="ai-video-section fade">
+  <div class="container">
 
-  <div class="carousel-wrapper">
-    <button class="carousel-btn prev">‹</button>
+    <h2 class="ai-title">AI Video</h2>
 
-    <div class="carousel-track">
+    <div class="ai-carousel">
 
-      <div class="carousel-item">
-        <div class="video-thumb" data-video="assets/video/V1_Ramdan.mp4">
-          <img src="assets/thumb/V1_Ramdan.jpg" alt="Video Thumbnail">
-          <span class="play-btn">▶</span>
+      <button class="ai-btn prev">‹</button>
+
+      <div class="ai-track">
+
+        <div class="ai-item">
+          <div class="ai-thumb" data-video="assets/video/V1_Ramdan.mp4">
+            <video muted preload="metadata">
+              <source src="assets/video/V1_Ramdan.mp4" type="video/mp4">
+            </video>
+            <span class="ai-play">▶</span>
+          </div>
         </div>
+
+        <div class="ai-item">
+          <div class="ai-thumb" data-video="assets/video/Stich_Berita_Viral.mp4">
+            <video muted preload="metadata">
+              <source src="assets/video/Stich_Berita_Viral.mp4" type="video/mp4">
+            </video>
+            <span class="ai-play">▶</span>
+          </div>
+        </div>
+
+        <div class="ai-item">
+          <div class="ai-thumb" data-video="assets/video/Baby_Podcast1.mp4">
+            <video muted preload="metadata">
+              <source src="assets/video/Baby_Podcast1.mp4" type="video/mp4">
+            </video>
+            <span class="ai-play">▶</span>
+          </div>
+        </div>
+
+        <div class="ai-item">
+          <div class="ai-thumb" data-video="assets/video/BabyandDad_Podcast.mp4">
+            <video muted preload="metadata">
+              <source src="assets/video/BabyandDad_Podcast.mp4" type="video/mp4">
+            </video>
+            <span class="ai-play">▶</span>
+          </div>
+        </div>
+
       </div>
 
-      <div class="carousel-item">
-        <div class="video-thumb" data-video="assets/video/Stich_Berita_Viral.mp4">
-          <img src="assets/thumb/Stich_Berita_Viral.jpg" alt="Video Thumbnail">
-          <span class="play-btn">▶</span>
-        </div>
-      </div>
-
-      <div class="carousel-item">
-        <div class="video-thumb" data-video="assets/video/Baby_Podcast1.mp4">
-          <img src="assets/thumb/Baby_Podcast1.jpg" alt="Video Thumbnail">
-          <span class="play-btn">▶</span>
-        </div>
-      </div>
-
-      <div class="carousel-item">
-        <div class="video-thumb" data-video="assets/video/BabyandDad_Podcast.mp4">
-          <img src="assets/thumb/BabyandDad_Podcast.jpg" alt="Video Thumbnail">
-          <span class="play-btn">▶</span>
-        </div>
-      </div>
+      <button class="ai-btn next">›</button>
 
     </div>
-
-    <button class="carousel-btn next">›</button>
   </div>
 </section>
+
+
+<!-- VIDEO MODAL -->
+<div class="ai-modal" id="aiModal">
+  <div class="ai-modal-content">
+    <span class="ai-close">&times;</span>
+    <video controls id="aiModalVideo"></video>
+  </div>
+</div>
+
 
 
 <!-- DESIGN -->
